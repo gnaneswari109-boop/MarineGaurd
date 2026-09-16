@@ -23,7 +23,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://marineguard-8imy-pdes11hra-gnaneswari109-9796s-projects.vercel.app"
+        "https://marine-guard-8imy-pdes11hra-gnaneswari109-9796s-projects.vercel.app"
     ],
     allow_methods=["*"],
     allow_headers=["*"],

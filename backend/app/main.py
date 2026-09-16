@@ -19,7 +19,15 @@ from .reporting.exports import csv_report, json_report, records
 
 logging.basicConfig(level=logging.INFO)
 app=FastAPI(title="MARINEGUARD AI", version="1.0.0")
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173"], allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "https://marineguard-8imy-pdes11hra-gnaneswari109-9796s-projects.vercel.app"
+    ],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 UPLOADS=Path(__file__).resolve().parents[2]/"uploads"; UPLOADS.mkdir(exist_ok=True)
 Base.metadata.create_all(bind=engine)
 ALLOWED={"image/png","image/jpeg","image/tiff"}

@@ -21,10 +21,8 @@ logging.basicConfig(level=logging.INFO)
 app=FastAPI(title="MARINEGUARD AI", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "https://marine-gaurd-8imy-pdes11hra-gnaneswari109-9796s-projects.vercel.app"
-    ],
+    allow_origins=["http://localhost:5173"],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_methods=["*"],
     allow_headers=["*"],
 )
